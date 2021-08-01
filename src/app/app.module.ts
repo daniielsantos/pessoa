@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginModule } from './login/login/login.module'
 import { PessoaModule } from './pessoa/pessoa.module';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PessoaModule } from './pessoa/pessoa.module';
     BrowserModule,
     AppRoutingModule,
     LoginModule,
-    PessoaModule
+    PessoaModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
