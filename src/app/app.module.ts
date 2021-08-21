@@ -1,3 +1,4 @@
+import { EnderecoModule } from './endereco/endereco.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http'
     AppRoutingModule,
     LoginModule,
     PessoaModule,
+    EnderecoModule,
     HttpClientModule
   ],
   providers: [],

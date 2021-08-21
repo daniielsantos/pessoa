@@ -5,6 +5,7 @@
       <th>Nome</th>
       <th>Idade</th>
       <th>Email</th>
+      <th>Data de Nascimento</th>
       <th class="text-center">
         <a [routerLink]="['/pessoas/novo']" title="Novo" alt="Novo" class="btn btn-xs btn-success">
           <i class="fa fa-plus" aria-hidden="true"></i> Novo
@@ -15,11 +16,12 @@
       <td>{{pessoa.nome}}</td>
       <td>{{pessoa.idade}}</td>
       <td>{{pessoa.email}}</td>
+      <td>{{pessoa.dataNascimento}}</td>
       <td class="text-center" style="width: 300px">
-        <a [routerLink]="['/pessoas/alterar/', pessoa.id]"  title="Editar" aria-multiline="Editar" class="btn btn-xs btn-info">
+        <a [routerLink]="['/pessoas/editar/', pessoa.id]"  title="Editar" aria-multiline="Editar" class="btn btn-xs btn-info">
           <i class="fa fa-edit" aria-hidden="true"></i> Editar
         </a>
-        <a (click)="remover(pessoa.id ?? 0)" title="Remover" alt="Remover" class="btn btn-xs btn-danger">
+        <a (click)="remover($event, pessoa)" title="Remover" alt="Remover" class="btn btn-xs btn-danger">
           <i class="fa fa-times" aria-hidden="true"></i> Remover
         </a>
       </td>

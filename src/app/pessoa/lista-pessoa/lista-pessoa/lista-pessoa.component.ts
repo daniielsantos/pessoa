@@ -22,20 +22,12 @@ export class ListaPessoaComponent implements OnInit {
     })
   }
 
-  inserir() {
-
-  }
-
-  buscarPorId() {
-  }
-
-  alterar(pessoa: Pessoa) {
-    console.log('pessoa', pessoa)
-  }
-
-  remover(id: number) {
-    this.pessoaService.remover(id).subscribe((result) => {
-      this.listarTodos()
-    })
+  remover($event: any, pessoa: Pessoa) {
+    $event.preventDefault();
+    if (confirm("Deseja realmente remover a pessoa :" + pessoa.nome + " ?")) {
+      this.pessoaService.remover(pessoa.id!).subscribe((result) => {
+        this.listarTodos()
+      })
+    }
   }
 }

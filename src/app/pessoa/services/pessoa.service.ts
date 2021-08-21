@@ -28,7 +28,8 @@ export class PessoaService {
     const novaPessoa: Pessoa = {
       nome: pessoa.nome,
       email: pessoa.email,
-      idade: pessoa.idade
+      idade: pessoa.idade,
+      dataNascimento: pessoa.dataNascimento
     }
     return this.http.patch<any>(`${URL}/${id}`, novaPessoa)
   }
@@ -36,8 +37,5 @@ export class PessoaService {
   remover(id: number): Observable<any> {
     return this.http.delete(`${URL}/${id}`)
   }
-
-
-
 
 }

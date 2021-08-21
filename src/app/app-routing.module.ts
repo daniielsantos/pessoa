@@ -1,3 +1,5 @@
+import { InserirEnderecoComponent } from './endereco/inserir-endereco/inserir-endereco.component';
+import { ListaEnderecoComponent } from './endereco/lista-endereco/lista-endereco.component';
 import { ListaPessoaComponent } from './pessoa/lista-pessoa/lista-pessoa/lista-pessoa.component';
 import { LoginComponent } from './login/login/login.component';
 import { NgModule } from '@angular/core';
@@ -24,9 +26,17 @@ const routes: Routes = [
     component: InserirPessoaComponent
   },
   {
-    path: 'pessoas/alterar/:id',
+    path: 'pessoas/editar/:id',
     component: EditarPessoaComponent
-  }
+  },
+  {
+    path: 'enderecos',
+    component: ListaEnderecoComponent
+  },
+  {
+    path: 'endereco/novo',
+    component: InserirEnderecoComponent
+  },
 ];
 
 @NgModule({

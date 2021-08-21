@@ -3,5 +3,6 @@ export class Pessoa {
     public id?: number,
     public nome?: string,
     public idade?: number,
-    public email?: string) { }
+    public email?: string,
+    public dataNascimento?: string) { }
 }

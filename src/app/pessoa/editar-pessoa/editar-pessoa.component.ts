@@ -12,21 +12,18 @@ import { PessoaService } from '../services/pessoa.service';
 export class EditarPessoaComponent implements OnInit {
   @ViewChild('formPessoa') formPessoa!: NgForm;
   pessoa: Pessoa = new Pessoa
-  id!: number
   constructor(private pessoaService: PessoaService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
 
     const id = Number(this.route.snapshot.paramMap.get('id'))
-    this.id = id
     this.pessoaService.buscaPorId(id).subscribe(pessoa => {
       this.pessoa = pessoa
     })
   }
 
-  alterar () {
+  alterar (id: number) {
     const pessoa = this.pessoa
-    const id = this.id
     this.pessoaService.atualizar(id, pessoa).subscribe(pessoa => {
       this.router.navigate(['/pessoas'])
     })
